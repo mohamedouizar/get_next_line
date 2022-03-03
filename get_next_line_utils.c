@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mouizar <mouizar@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/03 15:39:27 by mouizar           #+#    #+#             */
+/*   Updated: 2022/03/03 15:42:29 by mouizar          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "get_next_line.h"
 
@@ -43,7 +54,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
-		return ft_strdup(s2);
+		return (ft_strdup(s2));
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
 	p = malloc (sizeof(char) * (lens1 + lens2 + 1));
@@ -59,8 +70,9 @@ char	*ft_strdup(const char *s1)
 {
 	char	*str;
 	int		i;
+
 	if (!s1)
-		return NULL;
+		return (NULL);
 	i = 0;
 	str = (char *) malloc (sizeof(char) * ft_strlen(s1) +1);
 	if (!str)
@@ -71,17 +83,18 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
-int 	ft_strchr( char *s1, int c)
+int	ft_strchr( char *s1, int c)
 {
-	int				i;
+	int	i;
+
 	if (!s1)
-		return -1;
+		return (-1);
 	i = 0;
 	while (*(s1 + i))
 	{
-		if (s1[i] == ( char)c)
+		if (s1[i] == (char)c)
 			return (i);
 		i++;
 	}
-	return -1;
+	return (-1);
 }
